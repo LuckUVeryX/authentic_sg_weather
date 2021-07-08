@@ -6,7 +6,7 @@ Currently configured for Android.
 
 Location stream using GetX bindStream.
 
-JsonSerialization for Json to Dart code generation
+JsonSerialization for Json to Dart code generation.
 
 ## Screenshots
 ![ScreenShot](screen_captures/Screenshot_20210708-193343.jpg)
