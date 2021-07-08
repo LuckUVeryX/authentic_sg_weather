@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Authentic SG Weather',
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
