@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:authentic_sg_weather/app/data/models/phrase_model.dart';
-import 'package:authentic_sg_weather/app/data/models/weather_model.dart';
+import 'package:authentic_sg_weather/app/data/models/phrase/phrase_list_model.dart';
+import 'package:authentic_sg_weather/app/data/models/phrase/phrase_model.dart';
+import 'package:authentic_sg_weather/app/data/models/weather/open_weather_model.dart';
 import 'package:authentic_sg_weather/app/data/providers/weather_provider.dart';
 import 'package:authentic_sg_weather/app/routes/app_pages.dart';
 import 'package:authentic_sg_weather/core/values/weather_mapper.dart';
@@ -17,22 +18,27 @@ class LocationController extends GetxController {
     required weatherProvider,
   }) : _weatherProvider = weatherProvider;
 
-  Location location = Location();
-  LocationData? locationData;
   final WeatherProvider _weatherProvider;
-  Rx<WeatherModel> weather = WeatherModel().obs;
-  PhraseModel? _phraseModel;
 
-  int? get weatherCode => weather.value.weather?[0].id; // Default to mist
-  String get weatherIcon => 'assets/icons/${WeatherMap.imageId(weatherCode)}';
-  String? get weatherDesc => weather.value.weather?[0].description;
-  String? get temp => weather.value.main?.feelsLike.toString();
-  String? get locationName => weather.value.name;
+  Location location = Location();
+  PhraseListModel? _phraseListModel;
 
-  Phrases? get phrase {
-    return _phraseModel?.phrases?.firstWhere((phrase) {
-      return phrase.condition == weatherDesc;
-    });
+  Rxn<LocationData> locationStream = Rxn<LocationData>();
+  Rxn<OpenWeatherModel> weather = Rxn<OpenWeatherModel>();
+
+  String? get weatherIconId => weather.value?.weather[0].icon;
+  String get weatherIcon =>
+      'assets/icons/${WeatherIcons.imageId(weatherIconId)}';
+  String? get weatherDesc => weather.value?.weather[0].description;
+  String? get temp => weather.value?.main.feelsLike.toString();
+  String? get locationName => weather.value?.name;
+
+  PhraseModel? get phrase {
+    if (_phraseListModel?.phrases != null && weatherDesc != null) {
+      return _phraseListModel?.phrases.firstWhere((phrase) {
+        return phrase.condition == weatherDesc;
+      });
+    }
   }
 
   @override
@@ -43,22 +49,10 @@ class LocationController extends GetxController {
 
   void _initFunction() async {
     await _parseJsonFromAssets();
-    await _getWeather();
-  }
 
-  Future<void> _getWeather() async {
     bool permissionGranted = await _checkLocationPermisson();
-
     if (permissionGranted) {
-      locationData = await location.getLocation();
-      if (locationData != null) {
-        weather.value = (await _weatherProvider.getWeatherData(locationData!))!;
-        debugPrint('Loc: ${weather.value.name}');
-        debugPrint('Desc: ${weather.value.weather![0].description}');
-      }
-      if (_phraseModel != null) {
-        Get.offNamed(Routes.home);
-      }
+      await _bindLocationStream();
     } else {
       Get.dialog(
         const AlertDialog(
@@ -68,6 +62,19 @@ class LocationController extends GetxController {
         ),
       );
     }
+  }
+
+  Future<void> _bindLocationStream() async {
+    await location.changeSettings(distanceFilter: 1000);
+    locationStream.bindStream(location.onLocationChanged);
+    ever(locationStream, _getUpdatedWeather);
+    Get.offNamed(Routes.home);
+  }
+
+  Future<void> _getUpdatedWeather(LocationData? locationStream) async {
+    weather.value = (await _weatherProvider.getWeatherData(locationStream))!;
+    debugPrint('Loc: ${weather.value?.name}');
+    debugPrint('Desc: ${weather.value?.weather[0].description}');
   }
 
   Future<bool> _checkLocationPermisson() async {
@@ -94,6 +101,6 @@ class LocationController extends GetxController {
 
   Future<void> _parseJsonFromAssets() async {
     String response = await rootBundle.loadString('assets/json/phrases.json');
-    _phraseModel = PhraseModel.fromJson(jsonDecode(response));
+    _phraseListModel = PhraseListModel.fromJson(jsonDecode(response));
   }
 }

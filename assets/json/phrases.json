@@ -438,7 +438,6 @@
             ],
             "title": "Fucking|swee|weather.",
             "subline": "Depends if you are into clear sky la.",
-            "min": 25,
             "condition": "clear sky",
             "color": "0xFFFF0060"
         },
@@ -465,7 +464,7 @@
                 "in bed."
             ],
             "title": "Meh...|Just stay|in bed.",
-            "subline": "You can browse Tumblr & play Angrybirds.",
+            "subline": "Can hug bobo & play Overcooked.",
             "condition": "broken clouds",
             "color": "0xFF004A96"
         },

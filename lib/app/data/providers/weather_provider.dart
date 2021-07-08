@@ -1,9 +1,8 @@
 import 'package:authentic_sg_weather/core/utils/keys.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:location/location.dart';
 
-import '../models/weather_model.dart';
+import '../models/weather/open_weather_model.dart';
 
 class WeatherProvider extends GetConnect {
   @override
@@ -12,14 +11,16 @@ class WeatherProvider extends GetConnect {
     httpClient.baseUrl = 'https://api.openweathermap.org/data/2.5/';
   }
 
-  Future<WeatherModel?> getWeatherData(LocationData locationData) async {
-    try {
+  Future<OpenWeatherModel?> getWeatherData(LocationData? locationData) async {
+    // try {
+    if (locationData != null) {
       Response response = await get(
           'weather?lat=${locationData.latitude}&lon=${locationData.longitude}&appid=${ApiKey.key}&units=metric');
-      WeatherModel weather = WeatherModel.fromJson(response.body);
+      OpenWeatherModel weather = OpenWeatherModel.fromJson(response.body);
       return weather;
-    } catch (e) {
-      debugPrint('getWeatherData error: ${e.toString()}');
     }
+    // } catch (e) {
+    //   debugPrint('getWeatherData error: ${e.toString()}');
+    // }
   }
 }
