@@ -1,0 +1,482 @@
+{
+    "phrases": [
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm with light rain",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm with rain",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm with heavy rain",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "light thunderstorm",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "heavy thunderstorm",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "ragged thunderstorm",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm with light drizzle",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm with drizzle",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "Boom Boom"
+            ],
+            "title": "Boom Boom|kio liao.",
+            "subline": "Cannot hear the thunder meh?",
+            "condition": "thunderstorm with heavy drizzle",
+            "color": "0xFF9F9F9F"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "light intensity drizzle",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "drizzle",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "heavy intensity drizzle",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "light intensity drizzle rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "shower rain and drizzle",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "umbrella."
+            ],
+            "title": "Chu mng|ai gia|umbrella.",
+            "subline": "Trust me, no need look outside.",
+            "condition": "heavy shower rain and drizzle",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "umbrella."
+            ],
+            "title": "Chu mng|ai gia|umbrella.",
+            "subline": "Trust me, no need look outside.",
+            "condition": "shower drizzle",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "light rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "umbrella."
+            ],
+            "title": "Chu mng|ai gia|umbrella.",
+            "subline": "Trust me, no need look outside.",
+            "condition": "moderate rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "damn big."
+            ],
+            "title": "Aiyo|lor hor|damn big.",
+            "subline": "I think stay indoors better ah.",
+            "condition": "heavy intensity rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "damn big."
+            ],
+            "title": "Aiyo|lor hor|damn big.",
+            "subline": "I think stay indoors better ah.",
+            "condition": "very heavy rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "damn big."
+            ],
+            "title": "Aiyo|lor hor|damn big.",
+            "subline": "I think stay indoors better ah.",
+            "condition": "extreme rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "damn cold."
+            ],
+            "title": "Aiyo|lor hor|damn cold.",
+            "subline": "I think stay indoors better ah.",
+            "condition": "freezing rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "light intensity shower rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "shower rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "lor hor"
+            ],
+            "title": "Ai|lor hor|liao.",
+            "subline": "Faster keep clothes before mother scold.",
+            "condition": "ragged shower rain",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "light snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Heavy Snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Sleet",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Light shower Sleet",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Shower Sleet",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Light rain and snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Rain and snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Light shower snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Shower snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "got snow"
+            ],
+            "title": "Whoaaa|got snow|eh.",
+            "subline": "Climate change siao liao.",
+            "condition": "Heavy shower snow",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "mist",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "Smoke",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "Haze",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "sand / dust whirls",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "sand",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "dust whirls",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "fog",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "dust",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "volcanic ash",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "squalls",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "haze"
+            ],
+            "title": "Haiz|haze|again?",
+            "subline": "Time to wear N95 again.",
+            "condition": "tornado",
+            "color": "0xFFFF0000"
+        },
+        {
+            "highlight": [
+                "swee"
+            ],
+            "title": "Fucking|swee|weather.",
+            "subline": "Depends if you are into clear sky la.",
+            "min": 25,
+            "condition": "clear sky",
+            "color": "0xFFFF0060"
+        },
+        {
+            "highlight": [
+                "shitty"
+            ],
+            "title": "Totally|not|shitty.",
+            "subline": "Look outside for more information.",
+            "condition": "few clouds",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "shitty"
+            ],
+            "title": "Totally|not|shitty.",
+            "subline": "Look outside for more information.",
+            "condition": "scattered clouds",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "in bed."
+            ],
+            "title": "Meh...|Just stay|in bed.",
+            "subline": "You can browse Tumblr & play Angrybirds.",
+            "condition": "broken clouds",
+            "color": "0xFF004A96"
+        },
+        {
+            "highlight": [
+                "grey."
+            ],
+            "title": "It's just|fucking|grey.",
+            "subline": "Just clouds & no love, but computer games.",
+            "condition": "overcast clouds",
+            "color": "0xFF9F9F9F"
+        }
+    ]
+}
