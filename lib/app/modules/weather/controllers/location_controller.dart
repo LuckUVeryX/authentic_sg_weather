@@ -7,11 +7,11 @@ import 'package:authentic_sg_weather/app/data/models/weather/open_weather_model.
 import 'package:authentic_sg_weather/app/data/providers/weather_provider.dart';
 import 'package:authentic_sg_weather/app/routes/app_pages.dart';
 import 'package:authentic_sg_weather/core/values/weather_mapper.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:location/location.dart';
 
 class LocationController extends GetxController {
   LocationController({
@@ -20,10 +20,9 @@ class LocationController extends GetxController {
 
   final WeatherProvider _weatherProvider;
 
-  Location location = Location();
   PhraseListModel? _phraseListModel;
 
-  Rxn<LocationData> locationStream = Rxn<LocationData>();
+  Rxn<Position> positionStream = Rxn<Position>();
   Rxn<OpenWeatherModel> weather = Rxn<OpenWeatherModel>();
 
   String? get weatherIconId => weather.value?.weather[0].icon;
@@ -65,37 +64,52 @@ class LocationController extends GetxController {
   }
 
   Future<void> _bindLocationStream() async {
-    await location.changeSettings(distanceFilter: 1000);
-    locationStream.bindStream(location.onLocationChanged);
-    ever(locationStream, _getUpdatedWeather);
+    positionStream.bindStream(Geolocator.getPositionStream(
+      distanceFilter: 1000,
+    ));
+    ever(positionStream, _getUpdatedWeather);
     Get.offNamed(Routes.home);
   }
 
-  Future<void> _getUpdatedWeather(LocationData? locationStream) async {
-    weather.value = (await _weatherProvider.getWeatherData(locationStream))!;
+  Future<void> _getUpdatedWeather(Position? position) async {
+    weather.value = (await _weatherProvider.getWeatherData(position))!;
     debugPrint('Loc: ${weather.value?.name}');
     debugPrint('Desc: ${weather.value?.weather[0].description}');
   }
 
   Future<bool> _checkLocationPermisson() async {
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
+    bool serviceEnabled;
+    LocationPermission permission;
 
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
+    // Test if location services are enabled.
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      // Location services are not enabled don't continue
+      // accessing the position and request users of the
+      // App to enable the location services.
+      return false;
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // Permissions are denied, next time you could try
+        // requesting permissions again (this is also where
+        // Android's shouldShowRequestPermissionRationale
+        // returned true. According to Android guidelines
+        // your App should show an explanatory UI now.
         return false;
       }
     }
 
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
-        return false;
-      }
+    if (permission == LocationPermission.deniedForever) {
+      // Permissions are denied forever, handle appropriately.
+      return false;
     }
+
+    // When we reach here, permissions are granted and we can
+    // continue accessing the position of the device.
     return true;
   }
 
