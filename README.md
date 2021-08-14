@@ -8,5 +8,7 @@ Location stream using GetX bindStream.
 
 JsonSerialization for Json to Dart code generation.
 
+Icon credits to Authentic Weather App
+
 ## Screenshots
 ![ScreenShot](screen_captures/Screenshot_20210708-193343.jpg)
