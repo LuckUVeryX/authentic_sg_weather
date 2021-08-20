@@ -1,3 +1,3 @@
 class ApiKey {
-  static const key = 'fb8057bc02c2bd380062feb22006df19';
+  static const key = '31b74bc2f01131e8cc826e6dbad89b75';
 }
